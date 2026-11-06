@@ -15,6 +15,8 @@ from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LinearRegression, LogisticRegression
 from sklearn.model_selection import KFold, StratifiedKFold, cross_validate, train_test_split
+from sklearn.compose import TransformedTargetRegressor
+from sklearn.neural_network import MLPClassifier, MLPRegressor
 from sklearn.neighbors import KNeighborsClassifier, KNeighborsRegressor
 from sklearn.pipeline import Pipeline, make_pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
@@ -45,6 +47,14 @@ def estimador(nombre: str, seed: int):
         "rf": RandomForestRegressor(n_estimators=200, random_state=seed, n_jobs=1) if reg
         else RandomForestClassifier(n_estimators=200, random_state=seed, n_jobs=1),
         "svm": SVR() if reg else SVC(),
+        # Integrante 6 (algoritmo definido por el grupo): red neuronal multicapa (EC3 del informe).
+        # En regresión se entrena sobre log(1 + ganancia): la ganancia tiene asimetría 5.3 (EC2, 4.2);
+        # la predicción se devuelve en soles con expm1, así el MAE sigue siendo en S/.
+        "mlp": TransformedTargetRegressor(
+            regressor=MLPRegressor(hidden_layer_sizes=(64, 32), alpha=1e-3, max_iter=1000,
+                                   random_state=seed),
+            func=np.log1p, inverse_func=np.expm1) if reg
+        else MLPClassifier(hidden_layer_sizes=(64, 32), alpha=1e-3, max_iter=1000, random_state=seed),
     }
     return modelos[nombre]
 
