@@ -50,11 +50,13 @@ def estimador(nombre: str, seed: int):
         # Integrante 6 (algoritmo definido por el grupo): red neuronal multicapa (EC3 del informe).
         # En regresión se entrena sobre log(1 + ganancia): la ganancia tiene asimetría 5.3 (EC2, 4.2);
         # la predicción se devuelve en soles con expm1, así el MAE sigue siendo en S/.
+        # Hiperparámetros elegidos con validación cruzada solo sobre el 80 % (nunca con la prueba): una red
+        # grande (64, 32) sobreajustaba (MAE CV 1108 > baseline 631); una capa de 16 con alpha = 1 da 515.
         "mlp": TransformedTargetRegressor(
-            regressor=MLPRegressor(hidden_layer_sizes=(64, 32), alpha=1e-3, max_iter=1000,
+            regressor=MLPRegressor(hidden_layer_sizes=(16,), alpha=1.0, max_iter=500,
                                    random_state=seed),
             func=np.log1p, inverse_func=np.expm1) if reg
-        else MLPClassifier(hidden_layer_sizes=(64, 32), alpha=1e-3, max_iter=1000, random_state=seed),
+        else MLPClassifier(hidden_layer_sizes=(16,), alpha=1.0, max_iter=500, random_state=seed),
     }
     return modelos[nombre]
 

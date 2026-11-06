@@ -1,4 +1,4 @@
-numpy==VERSION
-pandas==VERSION
-scikit-learn==VERSION
-mlflow==VERSION
+numpy==2.5.4
+pandas==3.1.1
+scikit-learn==1.9.1
+mlflow==3.18.0
