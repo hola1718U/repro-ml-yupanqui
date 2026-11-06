@@ -10,7 +10,7 @@ Probado con **Python 3.13.18** en **Ubuntu 24.04 (Linux)**. Se necesita Python 3
 
 macOS / Linux:
 ```bash
-git clone https://github.com/<USUARIO>/repro-ml-yupanqui.git repro && cd repro
+git clone https://github.com/hola1718U/repro-ml-yupanqui.git repro && cd repro
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 PYTHONHASHSEED=0 python -m src.prepare_data
@@ -19,7 +19,7 @@ PYTHONHASHSEED=0 python -m src.run_seeds
 ```
 Windows (PowerShell):
 ```powershell
-git clone https://github.com/<USUARIO>/repro-ml-yupanqui.git repro; cd repro
+git clone https://github.com/hola1718U/repro-ml-yupanqui.git repro; cd repro
 python -m venv .venv; .venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 $env:PYTHONHASHSEED=0
