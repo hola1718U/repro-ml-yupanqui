@@ -23,6 +23,11 @@ def main() -> None:
         df = df.replace(CODIGOS_FALTANTES, np.nan)
     df = df.dropna(subset=[TARGET])             # sin objetivo no se puede entrenar
     # ---- Limpieza propia del dataset del grupo (agregar aquí) ----
+    # Validaciones (no cambian los datos): las columnas configuradas existen y el objetivo es numérico.
+    from src.config import COLS_CAT, COLS_NUM
+    faltan = [c for c in COLS_NUM + COLS_CAT + [TARGET] if c not in df.columns]
+    assert not faltan, f"columnas ausentes en raw: {faltan}"
+    assert pd.api.types.is_numeric_dtype(df[TARGET]), "el objetivo debe ser numérico"
 
     # --------------------------------------------------------------
     PROCESSED.parent.mkdir(parents=True, exist_ok=True)

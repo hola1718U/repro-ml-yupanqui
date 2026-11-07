@@ -4,7 +4,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 # Zonas del data lake
-RAW = ROOT / "data" / "raw" / "sentrybox_enaho2025_1.csv"            # zona raw (bronze): archivo original, nunca se edita
+RAW = ROOT / "data" / "raw" / "sentrybox_enaho2025.csv"            # zona raw (bronze): archivo original, nunca se edita
 PROCESSED = ROOT / "data" / "processed" / "dataset.csv"  # zona processed (silver): la genera prepare_data.py
 RESULTS = ROOT / "results" / "results_summary.csv"       # zona results (gold): la genera run_seeds.py
 
