@@ -1,4 +1,4 @@
-# Pipeline de ML reproducible · SentryBox (ganancia de microcomerciantes)
+# Pipeline de ML reproducible · SentryBox 
 
 Machine Learning I · Proyecto Integrador · Entregable individual
 Alumno: Alexander Andri Yupanqui Segura · Grupo: Equipo 1 (SentryBox) · Algoritmo asignado: integrante 6, `mlp` (red neuronal MLP, definido por el grupo)
