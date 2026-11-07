@@ -1,7 +1,7 @@
 # Pipeline de ML reproducible · SentryBox
 
 **Curso:** Machine Learning I (UCSUR, 2026-2) · **Entregable:** individual, Pipeline de ML reproducible (parte de la EC2)
-**Estudiante:** Alexander Andri Yupanqui Segura · **Grupo:** Equipo 1 (SentryBox) · **Integrante:** 6
+**Estudiante:** Alexander Andri Yupanqui Segura · **Grupo:** 1 (Equipo 2 en el informe, SentryBox) · **Integrante:** 6
 **Algoritmo asignado:** red neuronal MLP (`MLPRegressor`, definido por el grupo; `MODELO = "mlp"`)
 **Tipo de problema:** regresión · **Variable objetivo:** `ganancia_neta_mes` (S/ por mes)
 
@@ -244,13 +244,16 @@ El archivo raw es la evidencia de lo que entregó la fuente. Si lo edito a mano,
 Python decide la semilla de hash de los textos al arrancar, antes de ejecutar mi script. Si la defino dentro del script, ya es tarde: ese valor ya quedó fijado y puede cambiar el orden de conjuntos y diccionarios entre corridas. Por eso se define en la terminal (`PYTHONHASHSEED=0`) antes de lanzar `python`.
 
 ## 12. Prueba del extraño
-- **Evaluador:** Sebastian Armando Huanuco Maldonado (cuenta de GitHub `ArmandoHuanuco-dev`), compañero del mismo equipo del informe (Equipo 1 de SentryBox, integrante 3; su propio README lo registra como grupo 1, «Equipo 2 en informe»).
-- **Fecha:** 6 de noviembre de 2026 (marca de tiempo de la ejecución: 21:35, hora de Lima); Issue abierto el 7 de noviembre (UTC).
-- **Entorno del evaluador:** Windows 11 (PowerShell), Python 3.13, entorno virtual nuevo instalado solo con `requirements.txt`.
-- **Procedimiento:** clonó el repositorio en una carpeta vacía, creó un `.venv` nuevo, definió `PYTHONHASHSEED=0` y ejecutó `src.prepare_data`, `src.train --seed 42` y `src.run_seeds`.
-- **Resultado:** la salida pegada en el Issue coincide con la de este README: MD5 raw `79cb9c9f…`, MD5 processed `5caa212f…`, `mae_mean` 517.05 con `--seed 42`, baseline 631.0777 ± 0.1597 y MLP 521.4374 ± 4.0565.
+- **Evaluador:** Sebastian Armando Huanuco Maldonado (cuenta de GitHub `ArmandoHuanuco-dev`). Firma el Issue como «grupo 2» (el informe lo llama Equipo 2); en el informe del grupo aparece como integrante 3, en el mismo equipo del autor.
+- **Fecha:** 6 de noviembre de 2026, 21:41 (hora de Lima).
+- **Entorno del evaluador:** Windows 11 (PowerShell), Python 3.13, entorno virtual nuevo creado solo con `requirements.txt`, en una carpeta vacía.
+- **Qué reporta el Issue:**
+  1. En una primera ejecución, Git convirtió los saltos de línea del archivo raw de LF a CRLF y su MD5 no coincidió.
+  2. Después de agregar `.gitattributes` con `*.csv -text` (ya incluido en este repositorio), todos los MD5 y resultados coincidieron.
+  3. Declara que la salida «coincide al 100 %» con este README e incluye las tablas de métricas del baseline y del MLP con 5 semillas.
+- **Valores que deben salir:** MD5 raw `79cb9c9f…`, MD5 processed `5caa212f…` (Windows), `mae_mean` 517.05272 con `--seed 42`, baseline 631.0777 ± 0.1597 y MLP 521.4374 ± 4.0565.
 - **Evidencia:** https://github.com/hola1718U/repro-ml-yupanqui/issues/1
-- **Nota:** el evaluador pertenece al mismo equipo del informe, no a otro grupo. La prueba con un compañero de otro grupo sigue pendiente.
+- **Nota:** el evaluador pertenece al mismo equipo del informe, no a otro grupo.
 
 ## 13. Declaración de uso de IA
 Usé Claude (Anthropic) como asistente de programación en este repositorio: preparó la estructura a partir de la plantilla, completó `src/config.py` según la EC2 del grupo, agregó el MLP a la función `estimador`, probó varias configuraciones del MLP con validación cruzada sobre el 80 %, ejecutó los scripts y redactó el borrador del manifiesto y de este README. Yo revisé el código y los números, ejecuté los comandos en mi equipo con Windows y respondo por todo el contenido. No usé otras herramientas de IA.
@@ -258,4 +261,4 @@ Usé Claude (Anthropic) como asistente de programación en este repositorio: pre
 ## 14. Autor y repositorio
 - **Estudiante:** Alexander Andri Yupanqui Segura (Universidad Científica del Sur)
 - **Curso y entregable:** Machine Learning I · EC2, Pipeline de ML reproducible
-- **Proyecto:** SentryBox (Equipo 1) · **Rol:** integrante 6, algoritmo MLP
+- **Proyecto:** SentryBox (grupo 1, Equipo 2 en el informe) · **Rol:** integrante 6, algoritmo MLP
