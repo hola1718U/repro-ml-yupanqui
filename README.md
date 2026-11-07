@@ -1,7 +1,7 @@
 # Pipeline de ML reproducible · SentryBox
 
 **Curso:** Machine Learning I (UCSUR, 2026-2) · **Entregable:** individual, Pipeline de ML reproducible (parte de la EC2)
-**Estudiante:** Alexander Andri Yupanqui Segura · **Grupo:** 1 (Equipo 2 en el informe, SentryBox) · **Integrante:** 6
+**Estudiante:** Alexander Andri Yupanqui Segura · **Grupo:** 2  · **Integrante:** 6
 **Algoritmo asignado:** red neuronal MLP (`MLPRegressor`, definido por el grupo; `MODELO = "mlp"`)
 **Tipo de problema:** regresión · **Variable objetivo:** `ganancia_neta_mes` (S/ por mes)
 
