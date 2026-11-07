@@ -2,17 +2,19 @@
 
 | Campo | Valor |
 |---|---|
-| Nombre del archivo en `data/raw/` | `sentrybox_enaho2025_1.csv` |
+| Nombre del archivo en `data/raw/` | `sentrybox_enaho2025.csv` |
 | Fuente (institución) | INEI, Encuesta Nacional de Hogares (ENAHO) 2025, Módulo 500 «Empleo e Ingresos»; subconjunto del proyecto SentryBox (Equipo de Machine Learning I) |
 | URL exacta de descarga | https://proyectos.inei.gob.pe/microdatos/ (archivo original `Enaho01a-2025-500.csv`; el subconjunto filtrado lo entrega el grupo y está en este repositorio) |
-| Fecha de descarga | COMPLETAR (AAAA-MM-DD en que el grupo descargó la ENAHO 2025) |
-| Licencia o condiciones de uso | Datos abiertos del Estado peruano publicados por el INEI para uso estadístico y académico con cita de la fuente (según la EC2 del grupo; el texto exacto debe verificarse en la ficha técnica del INEI) |
+| Fecha de descarga | No quedó registrada en la documentación del grupo; el subconjunto se preparó a inicios de noviembre de 2026 |
+| Licencia o condiciones de uso | ODbL según la ficha de la Plataforma Nacional de Datos Abiertos (verificada por el integrante de Datos del grupo); el subconjunto derivado debe conservar la atribución a la fuente original |
 | ¿Se permite redistribuir? | Sí, con cita de la fuente. El archivo pesa 281 KB (< 100 MB), por eso se sube al repositorio |
 | Filas × columnas (raw) | 4 765 × 18 |
 | MD5 del archivo raw | `79cb9c9fcccd760795c3a28fdc8b35e3` |
-| MD5 del archivo processed | `79cb9c9fcccd760795c3a28fdc8b35e3` (igual al raw: el archivo ya llegó sin duplicados, sin códigos perdidos y con objetivo completo, así que `prepare_data.py` reescribe los mismos bytes) |
+| MD5 del archivo processed | `5caa212fdfd858bb9a4f218d43c94d8d` si se genera en Windows (saltos de línea CRLF); `79cb9c9fcccd760795c3a28fdc8b35e3` si se genera en Linux o macOS (LF) |
 
 Selección del subconjunto (hecha por el grupo antes de este repositorio): personas ocupadas, empleadores o independientes, del comercio al por menor (CIIU Rev. 4, 4700 a 4799). De 84 853 encuestados se obtuvieron 4 996; al quitar a quienes no informaron ganancia o declararon cero quedaron 4 765.
+
+El contenido de processed es idéntico al de raw (el archivo ya llegó sin duplicados, sin códigos perdidos y con objetivo completo). Solo cambia el salto de línea que escribe pandas en cada sistema operativo, y por eso cambia el MD5. `.gitattributes` (`*.csv -text`) evita que Git modifique los saltos de línea del raw al clonar.
 
 ## Diccionario de las variables usadas
 
