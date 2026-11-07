@@ -50,7 +50,7 @@ Cinco semillas (`results/results_summary.csv`, 10 filas; `*_sd` es la desviació
 
 **Resultado reportado:** MAE = **521.44 ± 4.06 S/** entre 5 semillas (media ± DE muestral, ddof=1) para el MLP; baseline (mediana): 631.08 ± 0.16 S/.
 
-![Corridas en MLflow](docs/mlflow.png)
+
 
 ## Estructura de datos (data lake)
 | Zona | Carpeta | Contenido | Regla |
