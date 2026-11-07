@@ -253,4 +253,3 @@ Usé Claude (Anthropic) como asistente de programación en este repositorio: pre
 - **Estudiante:** Alexander Andri Yupanqui Segura (Universidad Científica del Sur)
 - **Curso y entregable:** Machine Learning I · EC2, Pipeline de ML reproducible
 - **Proyecto:** SentryBox (Equipo 1) · **Rol:** integrante 6, algoritmo MLP
-- **Repositorio:** https://github.com/hola1718U/repro-ml-yupanqui
