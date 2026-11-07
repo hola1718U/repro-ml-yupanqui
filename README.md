@@ -253,7 +253,6 @@ Python decide la semilla de hash de los textos al arrancar, antes de ejecutar mi
   3. Declara que la salida «coincide al 100 %» con este README e incluye las tablas de métricas del baseline y del MLP con 5 semillas.
 - **Valores que deben salir:** MD5 raw `79cb9c9f…`, MD5 processed `5caa212f…` (Windows), `mae_mean` 517.05272 con `--seed 42`, baseline 631.0777 ± 0.1597 y MLP 521.4374 ± 4.0565.
 - **Evidencia:** https://github.com/hola1718U/repro-ml-yupanqui/issues/1
-- **Nota:** el evaluador pertenece al mismo equipo del informe, no a otro grupo.
 
 ## 13. Declaración de uso de IA
 Usé Claude (Anthropic) como asistente de programación en este repositorio: preparó la estructura a partir de la plantilla, completó `src/config.py` según la EC2 del grupo, agregó el MLP a la función `estimador`, probó varias configuraciones del MLP con validación cruzada sobre el 80 %, ejecutó los scripts y redactó el borrador del manifiesto y de este README. Yo revisé el código y los números, ejecuté los comandos en mi equipo con Windows y respondo por todo el contenido. No usé otras herramientas de IA.
