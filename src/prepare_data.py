@@ -7,7 +7,7 @@ import hashlib
 import numpy as np
 import pandas as pd
 
-from src.config import CODIGOS_FALTANTES, PROCESSED, RAW, TARGET
+from src.config import CODIGOS_FALTANTES, COLS_CAT, COLS_NUM, PROCESSED, RAW, TARGET
 
 
 def md5(path) -> str:
@@ -24,7 +24,6 @@ def main() -> None:
     df = df.dropna(subset=[TARGET])             # sin objetivo no se puede entrenar
     # ---- Limpieza propia del dataset del grupo (agregar aquí) ----
     # Validaciones (no cambian los datos): las columnas configuradas existen y el objetivo es numérico.
-    from src.config import COLS_CAT, COLS_NUM
     faltan = [c for c in COLS_NUM + COLS_CAT + [TARGET] if c not in df.columns]
     assert not faltan, f"columnas ausentes en raw: {faltan}"
     assert pd.api.types.is_numeric_dtype(df[TARGET]), "el objetivo debe ser numérico"
