@@ -244,7 +244,13 @@ El archivo raw es la evidencia de lo que entregó la fuente. Si lo edito a mano,
 Python decide la semilla de hash de los textos al arrancar, antes de ejecutar mi script. Si la defino dentro del script, ya es tarde: ese valor ya quedó fijado y puede cambiar el orden de conjuntos y diccionarios entre corridas. Por eso se define en la terminal (`PYTHONHASHSEED=0`) antes de lanzar `python`.
 
 ## 12. Prueba del extraño
-**PENDIENTE.** Evaluador (nombre y grupo): ___ · Fecha: ___ · Sistema operativo y versión de Python: ___ · Enlace al Issue: ___ · Resultado (coincide o no con el README y qué se corrigió): ___
+- **Evaluador:** Sebastian Armando Huanuco Maldonado (cuenta de GitHub `ArmandoHuanuco-dev`), compañero del mismo equipo del informe (Equipo 1 de SentryBox, integrante 3; su propio README lo registra como grupo 1, «Equipo 2 en informe»).
+- **Fecha:** 6 de noviembre de 2026 (marca de tiempo de la ejecución: 21:35, hora de Lima); Issue abierto el 7 de noviembre (UTC).
+- **Entorno del evaluador:** Windows 11 (PowerShell), Python 3.13, entorno virtual nuevo instalado solo con `requirements.txt`.
+- **Procedimiento:** clonó el repositorio en una carpeta vacía, creó un `.venv` nuevo, definió `PYTHONHASHSEED=0` y ejecutó `src.prepare_data`, `src.train --seed 42` y `src.run_seeds`.
+- **Resultado:** la salida pegada en el Issue coincide con la de este README: MD5 raw `79cb9c9f…`, MD5 processed `5caa212f…`, `mae_mean` 517.05 con `--seed 42`, baseline 631.0777 ± 0.1597 y MLP 521.4374 ± 4.0565.
+- **Evidencia:** https://github.com/hola1718U/repro-ml-yupanqui/issues/1
+- **Nota:** el evaluador pertenece al mismo equipo del informe, no a otro grupo. La prueba con un compañero de otro grupo sigue pendiente.
 
 ## 13. Declaración de uso de IA
 Usé Claude (Anthropic) como asistente de programación en este repositorio: preparó la estructura a partir de la plantilla, completó `src/config.py` según la EC2 del grupo, agregó el MLP a la función `estimador`, probó varias configuraciones del MLP con validación cruzada sobre el 80 %, ejecutó los scripts y redactó el borrador del manifiesto y de este README. Yo revisé el código y los números, ejecuté los comandos en mi equipo con Windows y respondo por todo el contenido. No usé otras herramientas de IA.
