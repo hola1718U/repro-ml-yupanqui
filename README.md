@@ -93,12 +93,14 @@ repro-ml-yupanqui/
 ## 5. Requisitos del entorno
 | Herramienta | Versión |
 |---|---|
-| Python | 3.13.18 (se necesita 3.11 o superior) |
-| Sistema operativo | Ubuntu 24.04 (Linux) |
+| Python | 3.12.0 (se necesita 3.11 o superior) |
+| Sistema operativo | Windows 11 (PowerShell) |
 | NumPy | 2.5.4 |
 | Pandas | 3.1.1 |
 | Scikit-learn | 1.9.1 |
 | MLflow | 3.18.0 |
+
+El autor ejecutó todo en Windows 11 con Python 3.12.0. Los mismos números también se obtuvieron en un segundo entorno (Ubuntu 24.04 con Python 3.13.18); la única diferencia es el MD5 de `processed` por los saltos de línea (ver 7.5).
 
 ## 6. Instrucciones para reproducir
 ### 6.1 Windows (PowerShell)
@@ -245,7 +247,7 @@ Python decide la semilla de hash de los textos al arrancar, antes de ejecutar mi
 **PENDIENTE.** Evaluador (nombre y grupo): ___ · Fecha: ___ · Sistema operativo y versión de Python: ___ · Enlace al Issue: ___ · Resultado (coincide o no con el README y qué se corrigió): ___
 
 ## 13. Declaración de uso de IA
-Usé Claude (Anthropic) como asistente de programación en este repositorio: preparó la estructura a partir de la plantilla, completó `src/config.py` según la EC2 del grupo, agregó el MLP a la función `estimador`, probó varias configuraciones del MLP con validación cruzada sobre el 80 %, ejecutó los scripts y redactó el borrador del manifiesto y de este README. Yo revisé el código y los números, ejecuté los comandos en mi equipo y respondo por todo el contenido.
+Usé Claude (Anthropic) como asistente de programación en este repositorio: preparó la estructura a partir de la plantilla, completó `src/config.py` según la EC2 del grupo, agregó el MLP a la función `estimador`, probó varias configuraciones del MLP con validación cruzada sobre el 80 %, ejecutó los scripts y redactó el borrador del manifiesto y de este README. Yo revisé el código y los números, ejecuté los comandos en mi equipo con Windows y respondo por todo el contenido. No usé otras herramientas de IA.
 
 ## 14. Autor y repositorio
 - **Estudiante:** Alexander Andri Yupanqui Segura (Universidad Científica del Sur)
